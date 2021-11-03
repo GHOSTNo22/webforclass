@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>杭电校花——石楠花</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >杭电校花——石楠花</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />Mickey<img src="./img/time.png" />2021/4/22  </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+			    &nbsp;&nbsp;提起杭电校花，不熟悉杭电的人可能会好奇这所电子科技大学能有何种美女，但是对于杭电学子而言，杭电校花是一种特殊的芬芳。<br />
+				&nbsp;&nbsp;石楠花也叫作千年红，这是一种蔷薇科石楠属常绿灌木，原产地就是中国。一般会在4-5月开花。叶子比较茂密，同时会开出细细密密的小白花，冬天的时候还会长出红色的果实。当然石楠花和世界十大最稀有罕见的花不能比，同时还经常被人吐槽气味像男性精液，感觉很污。
+				每当春天到来，全校各处的石楠花竞相开放，走过路过的男女纷纷捂住口鼻，女性更是无法接受。今年，更是发生了寝室楼石楠花被拦腰截断的惨案。
+				&nbsp;&nbsp;当然，石楠花象征着爱情和怒放的生命，其美好的寓意与蓬勃的生命值得我们感受。
+			</blockquote>
+			<img id="selfimg" src="./img/石楠花.jpg" width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+				来源：Mickey
+				<br />
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

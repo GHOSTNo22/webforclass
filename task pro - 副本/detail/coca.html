@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>可口可乐涨价</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >可口可乐时隔三年再涨价 专家认为将加速行业洗牌</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >
+			<p><img src="img/user_suit.png" />广州日报<img src="./img/time.png" />2021/4/20   </p>
+		    </div>
+			
+			<blockquote style="font-weight: bold;">
+				&nbsp;&nbsp;时隔三年，可口可乐又要涨价！可口可乐公司CEO詹姆斯 昆西日前表示，由于原材料价格上涨，该公司打算提高产品售价。
+				记者留意到，目前电商渠道其产品均在进行促销或有补贴价，便利店渠道的可乐则是3~3.5元一瓶的正常售价。
+				对此，中国食品产业分析师朱丹蓬告诉广州日报全媒体记者，可乐涨价或带动饮料行业普涨，
+				在原材料成本上涨情况下，中小企业跟不跟风涨价将陷入“两难”境地，新一轮行业洗牌或由此开启。<br />
+				
+				&nbsp;&nbsp;可口可乐传出提价消息后，有消费者笑言，可口可乐涨价正好给了自己一个戒掉可乐、转战其他“快乐水”的理由。
+				也有消费者对可口可乐涨价表示理解：元气森林价格不低还涉嫌宣传语误导消费者，多年不涨价的可口可乐至今还只卖3块钱。<br />
+				
+				&nbsp;&nbsp;可口可乐涨价是否算“领涨”？饮料行业赶在今夏旺季来临前会否普遍提价？
+				对此，有业内人士进行了分析。“作为全球饮料龙头品牌，可口可乐价格调整肯定会引导整个行业也跟风涨价，
+				但这轮涨价的背后却是新一轮优胜劣汰，大企业相对来说应对涨价有实力有底气，但中小企业跟不跟风涨就陷入两难了，
+				这轮涨价或会加速行业洗牌。”中国食品产业分析师朱丹蓬告诉广州日报全媒体记者，目前国内消费升级趋势明显，
+				饮品行业高价产品很多，可口可乐提价幅度一般只有几毛钱，对消费者影响有限，大众对品牌和品类反而更为敏感。
+				他认为，追逐“快乐水”的人群其实对价格并不敏感。<br /><br />
+			</blockquote>
+			<img id="selfimg" src="./img/coca.jpg" width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+				来源：广州日报
+				<br />
+				传送门：https://new.qq.com/omn/20210421/20210421A03HXD00.html
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>休味人生</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >休味人生</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />Mickey<img src="./img/time.png" />2021/4/22  </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+				 “身安则道隆”是先德的体验－ 我闻如是。 人从一出生就在走向死亡，没有例外。我曾不止一次问自己：当我挥手向这个世界作别时，可有骄傲和满足的勋章？ 世人追名逐利，贪婪财色不择手段。甚至不惜用青春和健康去换取。到头来却发现，除了内心的伤痕和满身的病痛，什么也没剩下。于是智者总结出一句话“命里有时终会有”“为事在人，成事在天”强追是追不来的。 于是努力、随缘成了我的座右铭。凡事认真努力去做，结果随缘。 放下沉重的得失观念，我轻松了很多。如果我富有，我会让富有的生活别致而有意义；如果我一贫如洗，我也会认真的过贫苦的生活而充满感恩和知足。 世间所有人，智愚贤亵都很独特，下下人也有人性之美。世间所有事，平凡中满是自然，自然中充满智慧。 读书、散步、呼吸、小憩，竟然如此美好。喝一口自来水，甜甜的味道。 生命，每时每刻都意义非凡。对陌生人的一个微笑，对失去前进动力人的一个鼓励，对有困难者的一个援手。冬天向树上挂一个自作的米瓶，夏天抛一片树叶给水中的蚂蚁。这一切自然而宛然。 我相信，当曲终人散时，我会： 轻轻的，我走了，正如我轻轻的来 我轻轻的挥手，不带走一片云彩
+			</blockquote>
+			<img id="selfimg"  width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+				来源：静止的流水
+				<br />
+				传送门：http://sanwenzx.com/sanwen/zheli/2021/318407.html
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

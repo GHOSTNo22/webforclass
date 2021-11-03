@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title> 目录</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="catalog_css.css"/>
+		<script type="text/javascript" id="back to top">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home">主页</a>
+				<a href="../detail/intro.html" title="intro">简介</a>
+				<a href="catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<img id="line" src="../img/607d29ad73031.png"/>
+		<div class="tab">
+			<button class="tablinks" onclick="opencontent(event,'news')" >新闻实事</button>
+			<button class="tablinks" onclick="opencontent(event,'tech')" >技术学习</button>
+			<button class="tablinks" onclick="opencontent(event,'journal')" id="defaultOpen">散文杂志</button>
+			<button class="tablinks" onclick="opencontent(event,'else')">其他</button>
+		</div>
+		<img src="../img/7367ebbce4c6589c0d6110194be0c89b.png" id="snowman" >
+		
+		<div id="news" class="tabcontent">
+		  <div class="tabc">
+			  <img src="../img/607d295003cd2.png"/><a href="../detail/japan.html">日本向大西洋倾倒核废水</a>	  
+		  </div>
+		  <div class="tabc">
+		  	  <img src="../img/607d295003cd2.png"/><a href="../detail/coca.html">可口可乐涨价</a>
+		  </div>
+		  <div class="tabc">
+		  	  <img src="../img/607d295003cd2.png"/><a href="../detail/特斯拉事件.html">特斯拉刹车失灵事件</a>
+		  </div>
+		</div>
+		
+		<div id="tech" class="tabcontent">
+		  <div class="tabc">
+		  		<img src="../img/607d295003cd2.png"/><a href="../detail/LIS.html">LIS算法</a>
+		  </div>
+		  <div class="tabc">
+		  		<img src="../img/607d295003cd2.png"/><a href="../detail/vector.html">C++vector的使用及操作</a>
+		  </div>
+		</div>
+		
+		<div id="journal" class="tabcontent">
+		  <div class="tabc">
+		  		<img src="../img/607d295003cd2.png"/><a href="../detail/散文1.html">行在心里，心在路上</a>
+		  </div>
+		  <div class="tabc">
+		  		<img src="../img/607d295003cd2.png"/><a href="../detail/散文2.html">休味人生</a>
+		  </div>
+		</div>
+		
+		<div id="else" class="tabcontent">
+		  <div class="tabc">
+		  		<img src="../img/607d295003cd2.png"/><a href="../detail/杭电校花——石楠花.html">石楠花yyds</a>
+		  </div>
+		</div>
+		
+		<script>
+			function opencontent(evt, contentName) {
+			    var i, tabcontent, tablinks;
+			    tabcontent = document.getElementsByClassName("tabcontent");
+			    for (i = 0; i < tabcontent.length; i++) {
+			        tabcontent[i].style.display = "none";
+			    }
+			    tablinks = document.getElementsByClassName("tablinks");
+			    for (i = 0; i < tablinks.length; i++) {
+			        tablinks[i].className = tablinks[i].className.replace(" active", "");
+			    }
+			    document.getElementById(contentName).style.display = "block";
+			    evt.currentTarget.className += " active";
+			}
+			document.getElementById("defaultOpen").click();
+		</script>
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

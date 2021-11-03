@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>zcj's blog首页</title>
+		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/page-task.css"/>
+		<!-- banner works-->
+        <script id="bottom_touch">
+        	window.onload = initLinkStyle;
+        	function initLinkStyle(){
+        		if(document.getelementbyclass('buttun_bottom')){
+        			var arrlink = document.getelementbyclass('buttun_bottom');
+        			for(i=0;i<arrlink.length;i++){
+        				var link=arrlink[i];
+        				link.id='ts_sel';
+        				link.onclick=clickNav;
+        			}
+        		}
+        	}
+        	@param{Object}event
+            function clickNav(event){
+        		var target=event.currentTarget;
+        		if(document.getElementsByClassName('buttun_bottom')){
+        			var arrlink = document.getElementsByClassName('buttun_bottom');
+        			for(i=0;i<arrlink.length;i++){
+        				var link=arrlink[i]; 
+        				if(link.id=='ts_seled'){
+        					link.id='ts_sel';
+        				}
+        			}
+        		}
+        		target.id = 'ts_seled';
+                return false;
+        	}
+        	var nextpage=document.getElementsByClassName('buttun_bottom1');
+        	nextpage.onclick=function() {
+        		var page=document.getElementsByClassName('buttun_bottom');
+        		if(nextpage[0].href=='#') nextpage[0].href=window.location.href.substring(window.location.href.lastIndexOf('/')+1,window.location.href.length);
+        		for(i=0;i<page.length;i++){
+        			if(page[i].href == nextpage[0].href){
+        			   nextpage[0].href=page[(i+1)%page.length].href;
+        			   break;
+        			}
+        		}
+        	}
+        </script>
+	</head>
+	<body>
+		<script type="text/javascript" id="back to top">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1")v
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+		<div class="top">
+			<div class="header w">
+				<a href="index.html" title="home">主页</a>
+				<a href="./detail/intro.html" title="intro">简介</a>
+				<a href="catalog/catalog.html" title="catalogue">目录</a>
+				<a href="form-page.html" title="form page">表单页</a>
+			</div> 
+		</div>
+		<!-- 头部结束-->
+		<div id="banner" class="w1" top:50px>
+		    <a id="ba" href="catalog/catalog.html"><img id="img" src="./img/banner/img1.jpg" width=500px height=300px></a>
+	
+			</span>
+		    <ul >
+		        <li class="numb"><a href="catalog/catalog.html">1</a></li>
+		        <li class="numb"><a href="catalog/cata2.html">2</a></li>
+		        <li class="numb"><a href="catalog/cata3.html">3</a></li>
+		        <li class="numb"><a href="catalog/cata4.html">4</a></li>
+		    </ul>
+		</div>
+		 <p id="brief"></p>
+		 <a href="#"><img id="blogname" src="img/Mickey’s%20blog2.png" ></a>
+		 <img id="logo2" src="img/logo2.png" />
+		 <!-- banner_js_part -->
+		<script type="text/javascript">
+		    var urls=new Array("./img/banner/img1.jpg","./img/banner/img2.jpg","./img/banner/img3.jpg","./img/banner/img4.jpg");
+		    var lis=document.getElementById("banner").getElementsByTagName("li");
+		    var Img=document.getElementById("img");
+			var address=document.getElementById("ba");
+			var urlnet=new Array("catalog/img/catalog.html","catalog/img/cata1.html","catalog/img/cata3.html","catalog/img/cata4.html");
+		    var len=lis.length;
+		    for(var i=0;i<len;i++){
+		        lis[i].onmouseover=function (){
+		            for(var j=0;j<len;j++){
+		                if(this==lis[j]){
+		                    lis[j].className="numb_get";
+		                    Img.src=urls[j];
+		                }
+		            }
+		        }
+		        lis[i].onmouseout=function () {
+		            for(var j=0;j<len;j++){
+		                if(this==lis[j]){
+		                    lis[j].className="numb";
+		                }
+		            }
+		        }
+				address.onmouseover=function(){
+					for(var m=0;m<len;m++){
+						if(Img.src==urls[m]){
+							address.href=urlnet[m];
+						}
+					}
+				}
+			}
+		</script>
+		<div class="content">
+		  <img id="midborder" src="./img/渐变border.png" >
+		  <h1 class="w2">最新内容</h1>
+		  <div class="content_1 w2">
+			<div class="aa">
+				<img class="img_content" src="img/content/😂.png" />
+				<h1 class="h_content">关于我</h1>
+				<p class="p_content">个人简介：土生土长的温州人，和大多数男生一样，从小对电子信息及计算机有很强的兴趣。同样，贪玩也是作为男生的一个不可避免的属性， 喜欢玩各类游戏，但是投入最多时间在lol上，喜欢打篮球，但是好像上了大学就渐渐疏远了。喜欢一切新鲜事物，并且愿意尝试。
+</p>
+				<a class="a_content" href="detail/intro.html" ></a>
+			</div>
+			<div class="bb">
+				<img class="img_content" src="img/content/😅.png" />
+				<h1 class="h_content">可口可乐涨价</h1>
+				<p class="p_content">时隔三年，可口可乐又要涨价！可口可乐公司CEO詹姆斯 昆西日前表示，由于原材料价格上涨，该公司打算提高产品售价。</p>
+				<a class="a_content" href="detail/coca.html"></a>
+			</div>
+			<div class="cc">
+				<img class="img_content" src="img/content/😨.png" />
+				<h1 class="h_content">曾经有口皆碑的日本，已经不再“绿色” </h1>
+				<p class="p_content">4月13日早上，日本政府正式决定以海洋排放方式处置福岛核电站事故核废水，东京电力公司将在2年内向海洋排放处理后的核废水。</p>
+				<a class="a_content" href="detail/japan.html"></a>
+			</div>
+			<div class="dd">
+				<img class="img_content " src="img/content/😪.png"/>
+				<h1 class="h_content">C++_vector操作</h1>
+				<p class="p_content">向量（Vector）是一个封装了动态大小数组的顺序容器（Sequence Container）。跟任意其它类型容器一样，它能够存放各种类型的对象。可以简单的认为，向量是一个能够存放任意类型的动态数组。</p>
+				<a class="a_content" href="detail/vector.html"></a>
+			</div>
+			<div class="ee">
+				<img class="img_content" src="img/content/�.png"/>
+				<h1 class="h_content">LIS算法</h1>
+				<p class="p_content">LIS算法：最长上升子序列</p>
+				<a class="a_content" href="detail/LIS.html"></a>
+			</div>
+			<div class="ff">
+				<img class="img_content" src="img/content/🤕.png" />
+				<h1 class="h_content">特斯拉事件</h1>
+				<p class="p_content">昨晚，国家市场监管总局、中消协就特斯拉事件深夜发声，责成地方监管部门依法维护消费者权益，随后特斯拉也表示将积极配合提供相关技术数据，这个结果可以说为大家吃了一颗定心丸。</p>
+				<a class="a_content" href="detail/特斯拉事件.html"></a>
+			</div>
+		  </div>
+		</div>
+		<!--主题部分结束-->
+		<div id="bottom">
+			<ul >
+				<li ><a class="buttun_bottom" href="index.html">1</a></li>
+				<li ><a class="buttun_bottom" href="index2.html">2</a></li>
+				<li ><a class="buttun_bottom" href="index3.html">3</a></li>
+				<li ><a class="buttun_bottom" href="index4.html">4</a></li>
+				<li ><a class="buttun_bottom1" href="index2.html">下一页</a></li> 
+				<li ><a class="buttun_bottom2" href="index4.html">最后</a></li> 
+			</ul>
+		</div>
+		
+		
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="./detail/intro.html">关于我</a>
+					<a class="LCC" href="./detail/coca.html">可口可乐涨价</a>
+					<a class="LCC" href="./detail/japan.html">日本排放核废水</a>
+					<a class="LCC" href="./detail/杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="./detail/散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="./detail/vector.html">c++vector</a>			
+				</div>
+			</div>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

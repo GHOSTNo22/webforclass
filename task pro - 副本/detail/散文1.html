@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>行在心里，心在路上</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >行在心里，心在路上</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />Mickey<img src="./img/time.png" />2021/4/22  </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+				 周日，做完家务，不想去看市井的喧嚣，只想独自游际在书页的章节里，用昨晚雨水浸润过的文字，拥一程温婉舒意的心境。拿出毕淑敏著的散文集《蓝色天堂》来读。喜欢毕淑敏的文字已由来已久了，几乎读遍了她所有的作品。这本《蓝色天堂》是作者2008年乘邮轮环游世界后，写的一本航海日志。打开书页，一枚书签从书里掉落下来，书签是附在书页里赠送的，是一枚“船票”。因为我没有乘船航过海，对船票比较陌生，想真正的船票应该与这枚“书签”的样子差不多吧。
+				 <br />
+				 此时，房间里静悄悄的，只有外面传来的或远或近的鸟儿叫声。因为窗帘没有打开，屋里显得有些暗，正是适合读书的情境。
+				 <br />
+				 这是一本用心装帧的书。书的封面被包着一层书皮，取掉书皮，展开，竟是一张航海图，上面是作者旅行的航线和所到国家、城市的名字。航海图的背面写着作者总结出的《旅行的33个理由》，仔细读下去，竟然全部认同。
+				 <br />
+				 我也是一个喜欢旅行的人，我喜欢一个人行在路上的那种感觉。记得儿时经常会到火车站，去看一列列火车减速进站，又徐徐开出的情景。因为火车站离家很远，回家后常常会被家人告诫，以后不准去了。可终经不起诱惑，又偷偷地去过几次，直到有一次被奶奶发现，重重地打了几巴掌后，才收住了去看火车的脚步。现在想想，儿时对于火车的那份热爱，可能并非原于火车本身吧。也许是对外面世界的那份好奇，才让我对一趟趟火车的来处和去踪有了莫明的期待。说来奇怪，稍稍长大一些后，我会常常做一个乘火车旅行的梦，梦中的我，要么是急急地赶火车，要么是乘上火车，到一个没有终点的地方。就这样乘着火车的梦，开始了我的一次次梦中旅行。
+				 <br />
+				 长大后，因为工作和境遇的原因，我到过很多地方，但真正意义上的旅行却举指可数。我以为旅行不应夹杂着其他的成份。比如去一个地方，还要有签合同或是处理问题等另外的事由牵绊，那样心就会被拖累，即使身在仙境，也无法让心生出禅意来。旅行应是只为旅行，旅行是乘物以游心，是让心摆脱俗事纠缠、把心安放的过程。正如毕淑敏列出的33个旅行理由，旅行或是为了寻找远方的故事，或是为满足生命原初的流浪本性，或是为活出与众不同的精彩……
+				 <br />
+				 打开书页，序言和目录的用纸是蓝色的，让人即刻想到海。“我用100天，蹈海翻江，买那张船票，花费了半生的积蓄。你花几十块钱，读它一页或几页，就可以沿着海，听素颜的地球在悄声述说……”作者熟悉的文笔和语境又一次呈现在我面前，让我欲罢不能，于是，一页页贪婪地读下。
+				 <br />
+				 眼睛实在看累了，合上书，躺在床上，呆想。也许今生，我都不可能去做一次环游世界的旅行，我注定要在生活的城市里，陪四季流转，伴容颜老去；但我会在熟悉的街巷间，偶尔去放慢脚步，看鸟儿在树间嬉戏，听隔壁孩童的琴音响起，这或者该算是另一种的旅行吧。由此想来，其实人生本身就是一次长长的旅行，你所有的经历都是你所路遇的风景。正所谓：行在心里，心在路上。
+				 <br />
+				 我又打开“航海图”，拿起“船票”，一幅即将出行的模样。这一次我要在《蓝色天堂》的文字里，让心灵伴着海风，去感受那海天一色的苍茫。
+				 
+
+			</blockquote>
+			<img id="selfimg"  width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+				来源：锦尚
+				<br />
+				传送门：http://sanwenzx.com/sanwen/shuqing/2021/319294.html
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

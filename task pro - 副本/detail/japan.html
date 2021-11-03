@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>日本向大西洋倾倒核废水</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >曾经有口皆碑的日本，已经不再“绿色” </h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />胡谈车市<img src="./img/time.png" />2021/4/20   </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+				&nbsp;&nbsp;日本是著名的长寿国家，男性平均预期寿命超过80岁，女性平均预期寿命超过86岁。
+				日本人如此长寿，被认为与日式饮食习惯“和食”有很大关系。
+				2013年12月，和食被联合国教科文组织认定为非物质文化遗产，其天然、健康的形象受到广泛关注。
+				日本生活环境良好，除了饮食意外，与良好的空气质量与水质环境也密不可分。<br />
+				
+				&nbsp;&nbsp;但福岛核废水入海计划，可能让这一切都化为泡影。4月13日早上，日本政府正式决定以海洋排放方式处置福岛核电站事故核废水，
+				东京电力公司将在2年内向海洋排放处理后的核废水。来自德国的一家海洋科学研究机构的计算结果显示，福岛沿岸拥有世界上最强的洋流，
+				从排放之日起57天内，放射性物质将扩散至太平洋大半区域，10年后蔓延全球海域；绿色和平组织核专家指出，
+				日核废水所含碳14在数千年内都存在危险，并可能造成基因损害。日本政府试图降低成本，将核污水一排了之，但在长远来看，日本会遭受更大损失。<br />
+				
+				&nbsp;&nbsp;从感性层面来说，我们每个人都有责任拒绝为日本政府向大海倾倒核废料的粗鲁行为买单。
+				我们购买的日本化妆品，日本汽车，日本电器，最终只会让日本更加有恃无恐，无视全球共有的海洋资源的权益。
+				摆脱日本制造在过去看来很难实现，但随着中国制造的逐步崛起，抛开日货，我们仍有高品质商品的选择权。世界在进步，唯有日本走向人类的反面。<br />
+				
+				&nbsp;&nbsp;日本破坏了世界的蓝色海洋，更是自毁日本的绿色产业。日本风景再美好，服务再贴心，如果空气，饮水，食物……遭受污染，还有什么价值可言。
+				一个对人类生命毫无责任心，缺少公共道德的国家，将失去全世界的尊重和信任。
+			</blockquote>
+			<img id="selfimg"  width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br /><br /><br /><br /><br /><br /><br />
+			    <br /><br /><br /><br /><br /><br /><br /><br />
+				<br /><br /><br />
+				来源：胡谈车市<br />
+				传送门：https://www.sohu.com/a/462050711_120633043?scm=1004.757612545455620096.0.0.4161
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

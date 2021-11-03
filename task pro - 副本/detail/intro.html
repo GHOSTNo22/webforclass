@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>第一个内容</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>		
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >关于我</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />Mickey<img src="./img/time.png" />2021/4/14   </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+				博主：Mickey(郑晨俊) 出生于2002，浙江温州<br /><br /> 爱好及特长：喜欢并比较擅长运动(跑步、篮球等大众运动) 编程能力够用 爱玩游戏（如lol）<br /><br />
+				个人简介：土生土长的温州人，和大多数男生一样，从小对电子信息及计算机有很强的兴趣。同样，贪玩也是作为男生的一个不可避免的属性，
+				喜欢玩各类游戏，但是投入最多时间在lol上，喜欢打篮球，但是好像上了大学就渐渐疏远了。喜欢一切新鲜事物，并且愿意尝试。<br /><br />			
+			</blockquote>
+			<img id="selfimg" src="../img/v2-d6a3fb3105664bc0719f8fd6dfa868a2_720w.jpg" width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+				QQ:1500727955<br />
+				微信:whyme18757592971<br />
+				电话:18757592971
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>

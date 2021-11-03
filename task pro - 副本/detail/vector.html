@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>C++Vector</title>
+		<link rel="stylesheet" type="text/css" href="reset.css"/>
+		<link rel="stylesheet" type="text/css" href="page-passage.css"/>
+		<script type="text/javascript">
+			window.onload=function(){
+				var topbtt=document.getElementById("btt1");
+				var timer=null;	
+				var pagelookheight = document.documentElement.clientHeight;			
+				 window.onscroll=function(){
+					var backtop = document.documentElement.scrollTop;
+					if(backtop>=pagelookheight){
+						topbtt.style.display='block';
+					}
+					else{
+						topbtt.style.display='none';
+					}
+				}
+				topbtt.onclick=function(){
+				  timer=setInterval(function(){
+					var backtop=document.documentElement.scrollTop;
+					var speedtop=backtop/5;
+					document.documentElement.scrollTop=backtop-speedtop;
+					if(backtop==0){
+						clearInterval(timer);
+					}
+				  },20);
+				}
+			}
+		</script>	
+	</head>
+	<body>
+		<div class="top">
+			<div class="header w">
+				<a href="../index.html" title="home" >主页</a>
+				<a href="intro.html" title="intro">简介</a>
+				<a href="../catalog/catalog.html" title="catalogue">目录</a>
+			</div> 
+		</div>
+		<!-- 目录单-->
+		<div class="list">
+			<a class="LIST" id="l1" href="../catalog/catalog.html">新闻时事</a>
+			<a class="LIST" id="l2" href="../catalog/cata2.html">技术学习</a>
+			<a class="LIST" id="l3" href="../catalog/cata3.html">散文杂志</a>
+			<a class="LIST" id="l4" href="../catalog/cata4.html">其他</a>
+			<div class="list-content">
+				<div id="lct">
+					<p id="lct_name">热门看点<img id="lct_img" src="img/hot.gif"></p>					
+				</div>
+				<div id="lcc">
+					<a class="LCC" href="intro.html">关于我</a>
+					<a class="LCC" href="coca.html">可口可乐涨价</a>
+					<a class="LCC" href="japan.html">日本排放核废水</a>
+					<a class="LCC" href="杭电校花——石楠花.html">石楠花yyds</a>
+					<a class="LCC" href="散文1.html">行在心里，心在路上</a>
+					<a class="LCC" href="vector.html">c++vector</a>			
+				</div>
+			</div>
+		</div>
+		<div class="passage">
+			<h1 >C++_vector操作</h1>
+			<img id="border1" src="./img/框2.png" />
+			<div id="inf" >		
+				<p><img src="img/user_suit.png" />Mickey<img src="./img/time.png" />2021/4/21   </p>
+			</div>
+			
+			<blockquote style="font-weight: bold;">
+			    1.1 vector 说明<br />
+			    ①vector是向量类型，可以容纳许多类型的数据，因此也被称为容器 ②(可以理解为动态数组，是封装好了的类）③进行vector操作前应添加头文件#include < vector >
+				<br />
+				1.2 vector初始化：<br />
+                方式1&nbsp;vector< int >a(10);&nbsp;方式2&nbsp;vector< int >a(10,1);&nbsp;方式3&nbsp;vector< int >a(b);&nbsp;方式4&nbsp;vector< int >a(b.begin(),b.begin+3);
+                方式5&nbsp;int b[7]={1,2,3,4,5,6,7}; vector< int > a(b,b+7）;
+				<br />1.3 vector对象的常用内置函数使用（举例说明）<br />
+					#include< vector >
+					vector< int > a,b;
+					//b为向量，将b的0-2个元素赋值给向量a
+					a.assign(b.begin(),b.begin()+3);
+					//a含有4个值为2的元素
+					a.assign(4,2);
+					//返回a的最后一个元素
+					a.back();
+					//返回a的第一个元素
+					a.front();
+					//返回a的第i元素,当且仅当a存在
+					a[i];
+					//清空a中的元素
+					a.clear();
+					//判断a是否为空，空则返回true，非空则返回false
+					a.empty();
+					//删除a向量的最后一个元素
+					a.pop_back();
+					//删除a中第一个（从第0个算起）到第二个元素，也就是说删除的元素从a.begin()+1算起（包括它）一直到a.begin()+3（不包括它）结束
+					a.erase(a.begin()+1,a.begin()+3);
+					//在a的最后一个向量后插入一个元素，其值为5
+					a.push_back(5);
+					//在a的第一个元素（从第0个算起）位置插入数值5,
+					a.insert(a.begin()+1,5);
+					//在a的第一个元素（从第0个算起）位置插入3个数，其值都为5
+					a.insert(a.begin()+1,3,5);
+					//b为数组，在a的第一个元素（从第0个元素算起）的位置插入b的第三个元素到第5个元素（不包括b+6）
+					a.insert(a.begin()+1,b+3,b+6);
+					//返回a中元素的个数
+					a.size();
+					//返回a在内存中总共可以容纳的元素个数
+					a.capacity();
+					//将a的现有元素个数调整至10个，多则删，少则补，其值随机
+					a.resize(10);
+					//将a的现有元素个数调整至10个，多则删，少则补，其值为2
+					a.resize(10,2);
+					//将a的容量扩充至100
+					a.reserve(100);
+					//b为向量，将a中的元素和b中的元素整体交换
+					a.swap(b);
+					//b为向量，向量的比较操作还有 != >= > <= <br />
+			   2.1 对向量a添加元素的几种方式<br />
+			   1.向向量a中添加元素vector< int >a;for(int i=0;i<10;++i){a.push_back(i);}<br />
+			   2.从数组中选择元素向向量中添加int a[6]={1,2,3,4,5,6};vector< int > b;for(int i=0;i<=4;++i){b.push_back(a[i]);}<br />
+			   3.从现有向量中选择元素向向量中添加int a[6]={1,2,3,4,5,6};vector< int >b;vector< int >c(a,a+4);for(vector< int >::iterator it=c.begin();it<c.end();++it){	b.push_back(*it);}
+			   <br />
+			   4.从文件中读取元素向向量中添加ifstream in("data.txt");vector< int >a;for(int i;in>>i){a.push_back(i);}<br />
+			   5.常见错误赋值方式vector< int >a;for(int i=0;i<10;++i){a[i]=i;}//下标只能用来获取已经存在的元素<br />
+			   2.2 从向量中读取元素<br />
+               1.通过下标方式获取int a[6]={1,2,3,4,5,6};vector<int>b(a,a+4);for(int i=0;i<=b.size()-1;++i){cout<<b[i]<<endl;}<br />
+               2.通过迭代器方式读取int a[6]={1,2,3,4,5,6};vector<int>b(a,a+4);for(vector<int>::iterator it=b.begin();it!=b.end();it++){cout<<*it<<"  ";}
+               <br />
+			   3.几个常用的算法<br />
+                #include< algorithm >
+                //对a中的从a.begin()（包括它）到a.end()（不包括它）的元素进行从小到大排列
+                sort(a.begin(),a.end());
+                //对a中的从a.begin()（包括它）到a.end()（不包括它）的元素倒置，但不排列，如a中元素为1,3,2,4,倒置后为4,2,3,1
+                reverse(a.begin(),a.end());
+                //把a中的从a.begin()（包括它）到a.end()（不包括它）的元素复制到b中，从b.begin()+1的位置（包括它）开始复制，覆盖掉原有元素
+                copy(a.begin(),a.end(),b.begin()+1);
+                //在a中的从a.begin()（包括它）到a.end()（不包括它）的元素中查找10，若存在返回其在向量中的位置
+                find(a.begin(),a.end(),10);
+				<br />
+				<br />
+				来源：会敲代码的地质汪<br />
+				传送门：https://blog.csdn.net/weixin_41743247/article/details/90635931
+			 </blockquote>
+			<img id="selfimg"  width="80%" height="80%"/>
+			<blockquote style="font-weight: bold;" >
+				<br /><br />
+
+			</blockquote>
+		</div>
+		<!--返回顶部-->
+		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+	</body>
+</html>
