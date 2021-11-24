@@ -30,7 +30,7 @@
 	  var lis=document.getElementById("banner").getElementsByTagName("li");
 	  var Img=document.getElementById("img");	
 	var address=document.getElementById("ba");
-	var urlnet=new Array("catalog/img/catalog.html","catalog/img/cata1.html","catalog/img/cata3.html","catalog/img/cata4.html");
+	var urlnet=new Array("posts/img/posts.html","posts/img/cata1.html","posts/img/index3.html","posts/img/index2.html");
 	  var len=lis.length;
 	  for(var i=0;i<len;i++){
 	      lis[i].onmouseover=function (){
