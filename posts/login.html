@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form-page</title>
+    <link rel="stylesheet" type="text/css" href="form-page.css">
+    <script>
+        //将用户名 密码  有效期存储到cookie中
+        function setCookie(name,value,days){
+            const date = new Date();
+            date.setDate(date.getDate() + days);
+            if(!getCookie(name)){
+                console.log(1);
+                document.cookie=name+"="+escape(value)+";"+((days==null)?"":"dates="+date.toGMTString());
+                return true;
+            }else{
+                return false;
+            }
+
+        }
+        //cookie中 存储是按照键值对 存储的
+        //根据name获取对应的值
+        function getCookie(name){
+            if(document.cookie.length > 0){
+                let start = document.cookie.indexOf(name + "=");
+                let end = -1;
+                if(start != -1){
+                    start = start + name.length + 1;
+                    end = document.cookie.indexOf(";" , start);
+                    if(end == -1){
+                        end = document.cookie.length;
+                    }
+                    return document.cookie.substring(start , end);
+                }
+            }
+
+        }
+        //注册功能
+        function register(){
+            const name = document.getElementById("ID").value;
+            const password = document.getElementById("password").value;
+            if(setCookie(name, password, 365)){
+                document.getElementById("ID").value="";
+                document.getElementById("password").value="";
+                alert("注册成功");
+            }else{
+                alert("注册失败!" + "该用户已存在！");
+            }
+        }
+        //登录功能
+        function login(){
+            const name = document.getElementById("ID").value;
+            const password = document.getElementById("password").value;
+            if(getCookie(name) == password){
+                alert("登录成功");
+                document.getElementById("ID").value="";
+                document.getElementById("password").value="";
+            }else{
+                alert("登录失败" + "用户名或者密码错误");
+            }
+        }
+        function show(){
+            if(document.cookie.length <= 0){
+                document.getElementById("div").innerHTML="没有内容";
+            }else{
+                document.getElementById("div").innerHTML=document.cookie;
+            }
+        }
+    </script>
+</head>
+<body>
+<div class="top">
+    <div class="header w">
+        <a href="index.html" title="home">主页</a>
+        <a href="./detail/intro.html" title="intro">简介</a>
+        <a href="./posts/index.html" title="catalogue">目录</a>
+        <a href="./posts/form.html" title="form page">评论</a>
+    </div>
+</div>
+<h1 class="m-content">登录区</h1>
+<form class="m-content">
+    <div>
+        <div class="H">
+            <input type="text" id="ID" placeholder="用户名">
+            <input type="password" id="password" placeholder="密码"><br>
+        </div>
+        <input type="button" value="登录" onclick="login()"/>
+        <input type="button" value="注册" onclick="register()"/>
+        <input type="button" value="显示" onclick="show()">
+    </div>
+</form>
+</body>
+</html>
