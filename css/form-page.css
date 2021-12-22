@@ -4,7 +4,7 @@
 }
 
 .H{
-    flex-direction: row;
+    /*flex-direction: row;*/
     padding: 5px;
 }
 
@@ -50,3 +50,18 @@ a:hover{
 h1{
     padding: 50px 0 0 0;
 }
+
+#com{
+    margin: 0 0;
+    padding: 10px;
+}
+
+.con{
+    float: left;
+    height: 140px;
+    width: 450px;
+    text-align: center;
+    color: #888888;
+    margin: 0 0;
+}
+

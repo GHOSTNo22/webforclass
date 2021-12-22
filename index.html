@@ -2,9 +2,13 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+		<meta http-equiv="x-ua-compatible" content="IE=7,9,10" >
 		<title>zcj's blog首页</title>
-		<link rel="stylesheet" type="text/css" href="css/reset.css"/>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 		<link rel="stylesheet" type="text/css" href="css/page-task.css"/>
+		<link rel="stylesheet" href="css/col3.css" type="text/css">
+		<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 		<!-- banner works-->
         <script id="bottom_touch">
         	window.onload = initLinkStyle;
@@ -45,14 +49,12 @@
         		}
         	}
         </script>
-	</head>
-	<body>
 		<script type="text/javascript" id="back to top">
 			window.onload=function(){
-				var topbtt=document.getElementById("btt1")v
-				var timer=null;	
-				var pagelookheight = document.documentElement.clientHeight;			
-				 window.onscroll=function(){
+				var topbtt=document.getElementById("btt1")
+				var timer=null;
+				var pagelookheight = document.documentElement.clientHeight;
+				window.onscroll=function(){
 					var backtop = document.documentElement.scrollTop;
 					if(backtop>=pagelookheight){
 						topbtt.style.display='block';
@@ -62,17 +64,19 @@
 					}
 				}
 				topbtt.onclick=function(){
-				  timer=setInterval(function(){
-					var backtop=document.documentElement.scrollTop;
-					var speedtop=backtop/5;
-					document.documentElement.scrollTop=backtop-speedtop;
-					if(backtop==0){
-						clearInterval(timer);
-					}
-				  },20);
+					timer=setInterval(function(){
+						var backtop=document.documentElement.scrollTop;
+						var speedtop=backtop/5;
+						document.documentElement.scrollTop=backtop-speedtop;
+						if(backtop==0){
+							clearInterval(timer);
+						}
+					},20);
 				}
 			}
-		</script>	
+		</script>
+	</head>
+	<body>
 		<div class="top">
 			<div class="header w">
 				<a href="index.html" title="home">主页</a>
@@ -82,53 +86,44 @@
 			</div> 
 		</div>
 		<!-- 头部结束-->
-		<div id="banner" class="w1" top:50px>
-		    <a id="ba" href="posts/index.html"><img id="img" src="./img/banner/img1.jpg" width=500px height=300px></a>
-	
-			</span>
-		    <ul >
-		        <li class="numb"><a href="posts/index.html">1</a></li>
-		        <li class="numb"><a href="posts/index4.html">2</a></li>
-		        <li class="numb"><a href="posts/index3.html">3</a></li>
-		        <li class="numb"><a href="posts/index2.html">4</a></li>
-		    </ul>
+<!--		<div id="banner" class="w1" top:50px>-->
+<!--		    <a id="ba" href="posts/index.html"><img id="img" src="./img/banner/img1.jpg" width=500px height=300px></a>-->
+<!--	-->
+<!--			</span>-->
+<!--		    <ul >-->
+<!--		        <li class="numb"><a href="posts/index.html">1</a></li>-->
+<!--		        <li class="numb"><a href="posts/index4.html">2</a></li>-->
+<!--		        <li class="numb"><a href="posts/index3.html">3</a></li>-->
+<!--		        <li class="numb"><a href="posts/index2.html">4</a></li>-->
+<!--		    </ul>-->
+<!--		</div>-->
+		<div class="col">
+			<div class="col_window">
+				<div class="col_con">
+					<img src="img/banner/img1.jpg" alt="" width="400">
+					<img src="img/banner/img2.jpg" alt="" width="400">
+					<img src="img/banner/img3.jpg" alt="" width="400">
+					<img src="img/banner/img4.jpg" alt="" width="400">
+				</div>
+				<div class="arrows">
+					<div class="arrows_Lcon"><div class="arrows_left"><</div></div>
+					<div class="arrows_Rcon"><div class="arrows_right">></div></div>
+				</div>
+				<div class="dots">
+					<div>
+						<span style="background-color:#a1b5c3;"></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</div>
 		</div>
-		 <p id="brief"></p>
+
+		<p id="brief"></p>
 		 <a href="#"><img id="blogname" src="img/Mickey’s%20blog2.png" ></a>
 		 <img id="logo2" src="img/logo2.png" />
 		 <!-- banner_js_part -->
-		<script type="text/javascript">
-		    var urls=new Array("./img/banner/img1.jpg","./img/banner/img2.jpg","./img/banner/img3.jpg","./img/banner/img4.jpg");
-		    var lis=document.getElementById("banner").getElementsByTagName("li");
-		    var Img=document.getElementById("img");
-			var address=document.getElementById("ba");
-			var urlnet=new Array("catalog/img/catalog.html","catalog/img/cata1.html","catalog/img/cata3.html","catalog/img/cata4.html");
-		    var len=lis.length;
-		    for(var i=0;i<len;i++){
-		        lis[i].onmouseover=function (){
-		            for(var j=0;j<len;j++){
-		                if(this==lis[j]){
-		                    lis[j].className="numb_get";
-		                    Img.src=urls[j];
-		                }
-		            }
-		        }
-		        lis[i].onmouseout=function () {
-		            for(var j=0;j<len;j++){
-		                if(this==lis[j]){
-		                    lis[j].className="numb";
-		                }
-		            }
-		        }
-				address.onmouseover=function(){
-					for(var m=0;m<len;m++){
-						if(Img.src==urls[m]){
-							address.href=urlnet[m];
-						}
-					}
-				}
-			}
-		</script>
+
 		<div class="content">
 		  <img id="midborder" src="./img/渐变border.png" >
 		  <h1 class="w2">最新内容</h1>
@@ -207,5 +202,92 @@
 		</div>
 		<!--返回顶部-->
 		<a style="display:none" href="javascript:;"  id="btt1" title="返回顶部"></a>
+
+		<script type="text/javascript">
+			var urls=new Array("./img/banner/img1.jpg","./img/banner/img2.jpg","./img/banner/img3.jpg","./img/banner/img4.jpg");
+			var lis=document.getElementById("banner").getElementsByTagName("li");
+			var Img=document.getElementById("img");
+			var address=document.getElementById("ba");
+			var urlnet=new Array("catalog/img/catalog.html","catalog/img/cata1.html","catalog/img/cata3.html","catalog/img/cata4.html");
+			var len=lis.length;
+			for(var i=0;i<len;i++){
+				lis[i].onmouseover=function (){
+					for(var j=0;j<len;j++){
+						if(this==lis[j]){
+							lis[j].className="numb_get";
+							Img.src=urls[j];
+						}
+					}
+				}
+				lis[i].onmouseout=function () {
+					for(var j=0;j<len;j++){
+						if(this==lis[j]){
+							lis[j].className="numb";
+						}
+					}
+				}
+				address.onmouseover=function(){
+					for(var m=0;m<len;m++){
+						if(Img.src==urls[m]){
+							address.href=urlnet[m];
+						}
+					}
+				}
+			}
+		</script>
+		<script>//jquery plugin
+			$('.arrows').hide();
+			$('.col_con').css({width:""+$('.col_window img').length*600+"px"});
+			$('.col_window').bind('mouseover',function () {       //鼠标放上图片
+				$('.arrows').show(0);
+				clearInterval(timer);
+			}).bind('mouseleave',function () {
+				$('.arrows').hide(0);
+				timer = setInterval(auto,5000);
+			});
+			var left =0;
+			function auto() {           //自动轮播
+				left -= 600;
+				if (left<-($('.col_con img').length-1)*600)
+					left = 0;
+				$('.col_con').css({left:""+left+"px"});
+				for (var j=0;j<($('span').length);j++)
+					$('span:eq('+j+')').css({backgroundColor:"#496274"});
+				$('span:eq('+(-left/600)+')').css({backgroundColor:"#a1b5c3"});
+			}
+			var timer = setInterval(auto,5000);
+			$('.arrows_Lcon').on('click',function () {  //左滑
+				left += 600;
+				if (left>0) {
+					left = -($('.col_window img').length-1)*600;
+				}
+				$('.col_con').css({left:""+left+"px"});
+				for (var j=0;j<($('span').length);j++)
+					$('span:eq('+j+')').css({backgroundColor:"#496274"});
+				$('span:eq('+(-left/600)+')').css({backgroundColor:"#a1b5c3"});
+				clearInterval(timer);
+				//timer = setInterval(auto,5000);
+			});
+			$('.arrows_Rcon').on('click',function () {  //右滑
+				left -= 600;
+				if (left<-($('.col_window img').length-1)*600)
+					left = 0;
+				$('.col_con').css({left:""+left+"px"});
+				for (var j=0;j<($('span').length);j++)
+					$('span:eq('+j+')').css({backgroundColor:"#496274"});
+				$('span:eq('+(-left/600)+')').css({backgroundColor:"#a1b5c3"});
+				clearInterval(timer);
+				//timer = setInterval(auto,5000);
+			});
+			$('.dots span').on('click',function () {    //点击切换
+				for (var j=0;j<($('span').length);j++)
+					$('span:eq('+j+')').css({backgroundColor:"#496274"});
+				$(this).css({backgroundColor:"#a1b5c3"});
+				left = -600*$(this).index();
+				$('.col_con').css({left:""+left+"px"});
+				clearInterval(timer);
+				//timer = setInterval(auto,5000);
+			});
+		</script>
 	</body>
 </html>

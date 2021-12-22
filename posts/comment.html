@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form-page</title>
+    <link rel="stylesheet" type="text/css" href="../css/form-page.css">
+</head>
+<body>
+    <div class="top">
+        <div class="header w">
+            <a href="../index.html" title="home">主页</a>
+            <a href="./detail/intro.html" title="intro">简介</a>
+            <a href="./posts/index.html" title="catalogue">目录</a>
+            <a href="./posts/form.html" title="form page">评论</a>
+            <a href="login.html" title="login">登录</a>
+        </div>
+    </div>
+    <h1 class="m-content">评论区</h1>
+    <form class="m-content">
+        <div>
+            <div class="H">
+            <input type="text" class="ID" placeholder="昵称">
+            <input type="text" class="Email" placeholder="邮箱"><br>
+            </div>
+            <textarea class="content" placeholder="输入评论信息" rows="10" cols="80"></textarea>
+            <br>
+            <div style="flex-direction: row">
+                <label>留下你的评价</label>
+                <select multiple>
+                    <option value="很有意义">很有意义</option>
+                    <option value="没有意义">没有意义</option>
+                    <option value="图一乐">图一乐</option>
+                    <option value="文采好">文采好</option>
+                    <option value="有创意">有创意</option>
+                </select>
+                <p>阅后情绪</p>
+                <label>开心</label>
+                <input type="radio" name="mood"  value="happy">
+                <label>伤心</label>
+                <input type="radio" name="mood"  value="sad">
+                <label>愤怒</label>
+                <input type="radio" name="mood"  value="angry">
+            </div>
+            <input type="submit" value="提交评论">
+         </div>
+    </form>
+    <h1 class="m-content">热门评论</h1>
+    <ul name="com">
+        <li class="con">热评1</li>
+        <li class="con">热评2</li>
+        <li class="con">热评3</li>
+        <li class="con">热评4</li>
+        <li class="con">热评5</li>
+        <li class="con">热评6</li>
+    </ul>
+</body>
+</html>
