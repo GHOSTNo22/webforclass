@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>form-page</title>
     <link rel="stylesheet" type="text/css" href="../css/form-page.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+
 </head>
 <body>
     <div class="top">
@@ -15,43 +17,39 @@
             <a href="login.html" title="login">登录</a>
         </div>
     </div>
-    <h1 class="m-content">评论区</h1>
-    <form class="m-content">
-        <div>
-            <div class="H">
-            <input type="text" class="ID" placeholder="昵称">
-            <input type="text" class="Email" placeholder="邮箱"><br>
-            </div>
-            <textarea class="content" placeholder="输入评论信息" rows="10" cols="80"></textarea>
-            <br>
-            <div style="flex-direction: row">
-                <label>留下你的评价</label>
-                <select multiple>
-                    <option value="很有意义">很有意义</option>
-                    <option value="没有意义">没有意义</option>
-                    <option value="图一乐">图一乐</option>
-                    <option value="文采好">文采好</option>
-                    <option value="有创意">有创意</option>
-                </select>
-                <p>阅后情绪</p>
-                <label>开心</label>
-                <input type="radio" name="mood"  value="happy">
-                <label>伤心</label>
-                <input type="radio" name="mood"  value="sad">
-                <label>愤怒</label>
-                <input type="radio" name="mood"  value="angry">
-            </div>
-            <input type="submit" value="提交评论">
-         </div>
-    </form>
-    <h1 class="m-content">热门评论</h1>
-    <ul name="com">
-        <li class="con">热评1</li>
-        <li class="con">热评2</li>
-        <li class="con">热评3</li>
-        <li class="con">热评4</li>
-        <li class="con">热评5</li>
-        <li class="con">热评6</li>
-    </ul>
+    <div class="container">
+        <div class="commentbox">
+            <textarea cols="80" rows="50" placeholder="来说几句吧......" class="mytextarea" id="content"></textarea>
+            <div class="btn btn-info pull-right" id="comment">评论</div>
+        </div>
+        <div class="comment-list">
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.comment.js" ></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        //初始化数据
+        var arr = [
+            {id:1,img:"../img/tu.jpg",replyName:"zcj",beReplyName:"匿名",content:"web前端课程太有趣了",time:"2021-10-17 11:42:53",address:"深圳",osname:"",browse:"谷歌",replyBody:[]},
+            {id:2,img:"../img/background.jpg",replyName:"匿名",beReplyName:"",content:"web前端课程太有趣了",time:"2021-10-17 11:42:53",address:"深圳",osname:"",browse:"谷歌",replyBody:[{id:3,img:"",replyName:"zcj",beReplyName:"匿名",content:"雀食",time:"2017-10-17 11:42:53",address:"",osname:"",browse:"谷歌"}]},
+            {id:3,img:"../img/tu.jpg",replyName:"zcj",beReplyName:"匿名",content:"我的评价是，",time:"2021-10-17 11:42:53",address:"深圳",osname:"win10",browse:"谷歌",replyBody:[]}
+        ];
+        $(function(){
+            $(".comment-list").addCommentList({data:arr,add:""});
+            $("#comment").click(function(){
+                var obj = new Object();
+                obj.img="./images/img.jpg";
+                obj.replyName="匿名";
+                obj.content=$("#content").val();
+                obj.browse="深圳";
+                obj.osname="win10";
+                obj.replyBody="";
+                $(".comment-list").addCommentList({data:[],add:obj});
+            });
+        })
+    </script>
+
 </body>
 </html>
